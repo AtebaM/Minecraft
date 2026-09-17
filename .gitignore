@@ -1,0 +1,11 @@
+# Ignore local environment variables with sensitive data
+.env
+
+# Ignore persistent Minecraft server data generated at runtime
+data/
+
+# OS and IDE generated files
+.DS_Store
+.idea/
+.vscode/
+*.log
