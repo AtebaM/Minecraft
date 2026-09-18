@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mc-server:
+    build: .
+    container_name: minecraft_server
+    restart: always
+    environment:
+      MIN_RAM: "1024M"
+      MAX_RAM: "2048M"
+      SERVER_NAME: "My Custom Minecraft Server"
+    ports:
+      - "8888:25565"
+    volumes:
+      - mc-data:/data
+
+volumes:
+  mc-data:
+    driver: local
