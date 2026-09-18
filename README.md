@@ -4,10 +4,7 @@
 - [Description](#description)
 - [Repository Content](#repository-content)
 - [Quickstart](#quickstart)
-- [Usage](#usage)
-  - [Environment Variables](#environment-variables)
-  - [Port Configuration](#port-configuration)
-  - [Data Persistence](#data-persistence)
+
 
 ---
 
