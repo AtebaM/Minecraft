@@ -6,14 +6,13 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: minecraft_server
-    restart: always
+    restart:  "on-failure"
     environment:
-      EULA: "true"
-      MIN_RAM: "1024M"
-      MAX_RAM: "2048M"
+      MIN_RAM: ${SERVER_MIN_RAM}
+      MAX_RAM: ${SERVER_MAX_RAM}
       SERVER_NAME: "My Custom Minecraft Server"
     ports:
-      - "8888:25565"
+      - "${SERVER_PORT}:25565"
     volumes:
       - mc-data:/data
 

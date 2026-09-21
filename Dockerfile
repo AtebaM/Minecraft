@@ -16,7 +16,7 @@ ENV MAX_RAM="2048M"
 ENV EULA="false"
 
 # 5. Download the server.jar file
-RUN wget -O server.jar https://meta.fabricmc.net/v2/versions/loader/1.20.4/0.15.7/1.0.0/server/jar
+COPY server.jar server.jar
 
 # 6. Default internal port for Minecraft
 EXPOSE 25565

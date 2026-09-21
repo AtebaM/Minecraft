@@ -23,6 +23,10 @@ Every file included in this repository serves a specific purpose:
 * **`entrypoint.sh`**: A shell script executed at container startup that dynamically generates the EULA configuration and initiates the Minecraft server process.
 * **`docker-compose.yaml`**: Orchestrates the `mc-server` service, managing port forwarding, environment variables, restart policies, and persistent storage volumes.
 * **`README.md`**: Project documentation providing setup instructions, technical details, and usage guides.
+* **`.dockerignore`**: Prevents unnecessary files and directories from being sent to the Docker build context.
+* **`.env.example`**: Template listing all required environment variables without exposing sensitive values or IP addresses.
+* **`CHECKLIST.md`**: Formal compliance document verifying all project evaluation requirements.
+* **`test_server.py`**: Python verification script utilizing the `mcstatus` library to test external server connectivity over port 8888.
 
 ---
 

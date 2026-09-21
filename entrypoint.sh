@@ -2,7 +2,7 @@
 set -e
 
 # verify that the EULA has been accepted
-if [ "${EULA}" = "true" ] || [ "${EULA}" = "TRUE" ]; then
+if [ "${EULA,,}" = "true" ]; then
     echo "EULA accepted via environment variable."
     echo "eula=true" > eula.txt
 else
