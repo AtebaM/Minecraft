@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+: "${MIN_RAM:=1024M}"
+: "${MAX_RAM:=2048M}"
+
 # verify that the EULA has been accepted
 if [ "${EULA,,}" = "true" ]; then
     echo "EULA accepted via environment variable."
@@ -12,4 +15,4 @@ else
 fi
 
 # execute the command passed to the entrypoint
-exec "$@"
+exec java -Xms"${MIN_RAM}" -Xmx"${MAX_RAM}" -jar server.jar nogui

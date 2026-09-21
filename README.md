@@ -4,6 +4,7 @@
 - [Description](#description)
 - [Repository Content](#repository-content)
 - [Quickstart](#quickstart)
+- [Usage](#usage)
 
 
 ---
@@ -42,3 +43,39 @@ Before running the server, ensure you have the following installed on your host 
    ```bash
    git clone <repository-url>
    cd <repository-folder>
+   
+
+## Usage
+
+This section details how to configure, customize, and manage the Minecraft server container.
+
+### Environment Variables
+
+1. Create your environment configuration file from the template `` .env.example ``
+2. Build and launch the container in detached mode
+
+The server behavior is controlled by environment variables defined in your `.env` file or `docker-compose.yaml`:
+
+| Variable | Default | Description |
+| :--- | :--- | :--- |
+| `SERVER_ADDRESS` | `YOUR_SERVER_IP_HERE` | The target IP address or hostname used for connectivity checks and server binding. |
+| `SERVER_PORT` | `8888` | The external port mapped to the server on the host machine. |
+| `SERVER_MIN_RAM` | `1024M` | Initial memory allocation assigned to the Java Virtual Machine (`-Xms`). |
+| `SERVER_MAX_RAM` | `2048M` | Maximum memory allocation assigned to the Java Virtual Machine (`-Xmx`). |
+
+3. Modifying Performance (RAM)
+To scale server performance for a larger player base, adjust the RAM limits inside your .env file:
+
+`SERVER_MIN_RAM=2048M`
+`SERVER_MAX_RAM=4096M`
+
+4. Modifying Server Ports
+
+To run multiple Minecraft instances or avoid port collisions on your host machine, change ``SERVER_PORT`` in .env
+
+`SERVER_PORT=25565`
+
+After editing .env, restart the container setup:
+
+`docker compose up -d --build`
+

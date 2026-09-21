@@ -23,6 +23,3 @@ EXPOSE 25565
 
 # 7. Definition of the entrypoint script
 ENTRYPOINT ["/entrypoint.sh"]
-
-# 8. Default command passed to the entrypoint script
-CMD ["sh", "-c", "java -Xms${MIN_RAM} -Xmx${MAX_RAM} -jar server.jar nogui"]
