@@ -1,5 +1,9 @@
 # Custom Minecraft Server Container
 
+This project provides a fully containerized setup to run a custom Minecraft Java Edition server using Docker and Docker Compose. 
+
+The primary goal of this repository is to offer a minimal, reliable, and persistent game server deployment without relying on pre-packaged third-party Minecraft images. It compiles a clean Java runtime environment, automatically retrieves the official server executable, handles EULA compliance via environment variables, and persists all game states.
+
 ## Table of Contents
 - [Description](#description)
 - [Repository Content](#repository-content)
@@ -7,14 +11,45 @@
 - [Usage](#usage)
 
 
----
 
-## Description
-This project provides a fully containerized setup to run a custom Minecraft Java Edition server using Docker and Docker Compose. 
 
-The primary goal of this repository is to offer a minimal, reliable, and persistent game server deployment without relying on pre-packaged third-party Minecraft images. It compiles a clean Java runtime environment, automatically retrieves the official server executable, handles EULA compliance via environment variables, and persists all game states.
+## Quickstart
 
----
+### Prerequisites
+Before running the server, ensure you have the following installed on your host system:
+* [Docker Engine](https://docs.docker.com/get-docker/) (v20.10.0 or higher)
+* [Docker Compose](https://docs.docker.com/compose/install/) (v2.0.0 or higher)
+
+### Starting the Server
+1. Clone this repository to your machine or Cloud VM:
+   ```bash
+   git clone `https://github.com/AtebaM/Minecraft.git`
+   cd `Minecraft`
+
+2. Ensure you have python installed
+
+   sudo apt update && sudo apt install -y python3-pip
+
+2. Ensure entrypoint.sh is executable
+
+   chmod +x entrypoint.sh
+
+3. Build and launch the container
+
+   docker compose up -d --build
+
+4. Verify container status
+   
+   docker ps
+
+
+5. Monitor startup logs
+
+   docker logs -f minecraft_server
+
+## Usage
+
+This section details how to configure, customize, and manage the Minecraft server container.
 
 ## Repository Content
 Every file included in this repository serves a specific purpose:
@@ -31,23 +66,6 @@ Every file included in this repository serves a specific purpose:
 
 ---
 
-## Quickstart
-
-### Prerequisites
-Before running the server, ensure you have the following installed on your host system:
-* [Docker Engine](https://docs.docker.com/get-docker/) (v20.10.0 or higher)
-* [Docker Compose](https://docs.docker.com/compose/install/) (v2.0.0 or higher)
-
-### Starting the Server
-1. Clone this repository to your machine or Cloud VM:
-   ```bash
-   git clone <repository-url>
-   cd <repository-folder>
-   
-
-## Usage
-
-This section details how to configure, customize, and manage the Minecraft server container.
 
 ### Environment Variables
 
