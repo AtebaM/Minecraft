@@ -1,0 +1,7 @@
+.git
+.gitignore
+.env
+*.log
+data/
+test_server.py
+README.md

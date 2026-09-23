@@ -1,0 +1,20 @@
+services:
+  mc-server:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: minecraft_server
+    restart:  "on-failure"
+    environment:
+      MIN_RAM: ${SERVER_MIN_RAM}
+      MAX_RAM: ${SERVER_MAX_RAM}
+      SERVER_NAME: "My Custom Minecraft Server"
+      EULA: ${EULA:-false}
+    ports:
+      - "${SERVER_PORT}:25565"
+    volumes:
+      - mc-data:/data
+
+volumes:
+  mc-data:
+    driver: local
