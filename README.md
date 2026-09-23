@@ -80,6 +80,8 @@ The server behavior is controlled by environment variables defined in your `.env
 | `SERVER_PORT` | `8888` | The external port mapped to the server on the host machine. |
 | `SERVER_MIN_RAM` | `1024M` | Initial memory allocation assigned to the Java Virtual Machine (`-Xms`). |
 | `SERVER_MAX_RAM` | `2048M` | Maximum memory allocation assigned to the Java Virtual Machine (`-Xmx`). |
+| `EULA`           | `TRUE`  | Explicit acceptance of the End User License Agreement (must be set to `true` to start the server). |
+
 
 3. Modifying Performance (RAM)
 To scale server performance for a larger player base, adjust the RAM limits inside your .env file:
