@@ -9,7 +9,7 @@ services:
       MIN_RAM: ${SERVER_MIN_RAM}
       MAX_RAM: ${SERVER_MAX_RAM}
       SERVER_NAME: "My Custom Minecraft Server"
-      EULA: ${EULA}
+      EULA: ${EULA:-false}
     ports:
       - "${SERVER_PORT}:25565"
     volumes:
